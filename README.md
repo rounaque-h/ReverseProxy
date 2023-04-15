@@ -15,6 +15,7 @@ proxyPort: The port number on which the proxy server will listen for incoming cl
 backendServers: A list of InetAddress objects representing the addresses of the available backend servers.
 backendPort: The port number on which the backend servers are listening for incoming requests.
 You can then call the start() method on the ReverseProxyLoadBalancer instance to start the server.</h3>
+<h3 align="left">This will start the reverse proxy and load balancer on port 8080 and forward incoming requests to either backendServer1 or backendServer2 using round-robin algorithm on port 80.</h3>
   
 ```java
 InetAddress backendServer1 = InetAddress.getByName("backendServer1");
@@ -22,6 +23,5 @@ InetAddress backendServer2 = InetAddress.getByName("backendServer2");
 List<InetAddress> backendServers = Arrays.asList(backendServer1, backendServer2);
 
 ReverseProxyLoadBalancer loadBalancer = new ReverseProxyLoadBalancer(8080, backendServers, 80);
-loadBalancer.start();```java
+loadBalancer.start();
 
-<h3 align="left">This will start the reverse proxy and load balancer on port 8080 and forward incoming requests to either backendServer1 or backendServer2 using round-robin algorithm on port 80.</h3>
