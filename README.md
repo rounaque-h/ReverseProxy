@@ -22,6 +22,6 @@ InetAddress backendServer2 = InetAddress.getByName("backendServer2");
 List<InetAddress> backendServers = Arrays.asList(backendServer1, backendServer2);
 
 ReverseProxyLoadBalancer loadBalancer = new ReverseProxyLoadBalancer(8080, backendServers, 80);
-loadBalancer.start();java```
+loadBalancer.start();```java
 
 <h3 align="left">This will start the reverse proxy and load balancer on port 8080 and forward incoming requests to either backendServer1 or backendServer2 using round-robin algorithm on port 80.</h3>
