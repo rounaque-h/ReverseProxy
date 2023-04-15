@@ -11,9 +11,11 @@ backendServers: A list of InetAddress objects representing the addresses of the 
 backendPort: The port number on which the backend servers are listening for incoming requests.
 You can then call the start() method on the ReverseProxyLoadBalancer instance to start the server.
   
-// Your Java code goes here InetAddress backendServer1 = InetAddress.getByName("backendServer1");
+```java
+InetAddress backendServer1 = InetAddress.getByName("backendServer1");
 InetAddress backendServer2 = InetAddress.getByName("backendServer2");
 List<InetAddress> backendServers = Arrays.asList(backendServer1, backendServer2);
+
 ReverseProxyLoadBalancer loadBalancer = new ReverseProxyLoadBalancer(8080, backendServers, 80);
 loadBalancer.start();
   
